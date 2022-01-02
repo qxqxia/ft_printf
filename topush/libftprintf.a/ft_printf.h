@@ -21,7 +21,7 @@
 
 int		ft_printf(const char *str, ...);
 
-int		ft_parser(va_list args, char type);
+int		ft_parser(va_list args, const char type);
 
 int		ft_printchar(int c);
 

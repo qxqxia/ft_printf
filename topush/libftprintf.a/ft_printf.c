@@ -12,27 +12,25 @@
 
 #include "ft_printf.h"
 
-int	ft_printchar(int c);
-
-int	ft_parser(va_list args, char type)
+int	ft_parser(va_list args, const char type)
 {
 	int	len;
 
 	len = 0;
 	if (type == 'c')
-		len += ft_printchar(va_arg(args, int));
+		len = ft_printchar(va_arg(args, int));
 	else if (type == 's')
-		len += ft_printstr(va_arg(args, char *));
+		len = ft_printstr(va_arg(args, char *));
 	else if (type == 'p')
-		len += ft_printptr(va_arg(args, unsigned long long));
+		len = ft_printptr(va_arg(args, unsigned long long));
 	else if (type == 'd' || type == 'i')
-		len += ft_printnbr(va_arg(args, int));
+		len = ft_printnbr(va_arg(args, int));
 	else if (type == 'u')
-		len += ft_printunsignednbr(va_arg(args, unsigned int));
+		len = ft_printunsignednbr(va_arg(args, unsigned int));
 	else if (type == 'x' || type == 'X')
-		len += ft_printhex(va_arg(args, unsigned int), type);
+		len = ft_printhex(va_arg(args, unsigned int), type);
 	else if (type == '%')
-		len += ft_printpourcen();
+		len = ft_printpourcen();
 	return (len);
 }
 
@@ -47,7 +45,7 @@ int	ft_printf(const char *str, ...)
 	va_start(args, str);
 	if (!str)
 		return (0);
-	while (str)
+	while (str[i])
 	{
 		if (str[i] == '%')
 		{

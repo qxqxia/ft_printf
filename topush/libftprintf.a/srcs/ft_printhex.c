@@ -31,10 +31,13 @@ int	ft_printhex(unsigned int n, const char type)
 {
 	if (n < 10)
 		ft_putchar_fd((n + '0'), 1);
-	else
+	else if (n >= 16)
 	{
 		ft_printhex(n / 16, type);
 		ft_printhex(n % 16, type);
+	}
+	else
+	{ 
 		if (type == 'x')
 			ft_putchar_fd((n - 10 + 'a'), 1);
 		else if (type == 'X')

@@ -18,7 +18,7 @@ int	ft_ptr_len(uintptr_t n)
 
 	i = 0;
 	if (!n)
-		return (0);
+		return (-1);
 	while (n)
 	{
 		i++;
@@ -44,8 +44,7 @@ int	ft_printptr(unsigned long long ptr)
 {
 	int	i;
 
-	i = 0;
-	i += write(1, "0x", 2);
+	i = write(1, "0x", 2);
 	if (ptr == 0)
 		i += write(1, "0", 1);
 	else

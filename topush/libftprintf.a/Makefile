@@ -44,7 +44,7 @@ $(NAME):$(OBJS)
 		make -C $(LIBFT)
 		cp libft/libft.a $(NAME)
 		$(CC) $(FLAGS) $(INCLUDES) $(SRCS)
-		ar -rc $(NAME) $(OBJS)
+		ar -rc $(NAME) $(SRCS_O)
 
 all: $(NAME)
 
@@ -57,8 +57,5 @@ fclean: clean
 		rm -rf $(NAME)	
 
 re: fclean all
-
-%.o : %.c
-	$(CC) $(FLAGS) $(NAME) -c $< -o $@
 
 .PHONY: all clean fclean re

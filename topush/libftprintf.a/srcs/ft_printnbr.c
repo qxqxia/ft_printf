@@ -19,9 +19,9 @@ int	ft_printnbr(int n)
 
 	i = 0;
 	if (!n)
-		return (0);
+		return (-1);
 	num = ft_itoa(n);
-	i = ft_strlen(num);
+	i = ft_printstr(num);
 	free (num);
 	return (i);
 }

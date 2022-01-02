@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printchar.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qxia <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 12:10:12 by qxia              #+#    #+#             */
-/*   Updated: 2021/12/28 16:23:29 by qxia             ###   ########.fr       */
+/*   Updated: 2021/12/31 12:03:45 by qinxia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
+
 int	ft_printchar(int c)
 {
-	if (c)
-		write (1, &c, 1);
+	write(1, &c, 1);
 	return (1);
 }
